@@ -1,3 +1,21 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get '/mylist', to: 'book_list_items#index', as: 'book_list_items'
+
+  devise_for :users
+
+  # enquiry routes
+  get 'enquiries', to: 'enquiries#index'
+  get 'enquiries/new'
+  post 'enquiries', to:'enquiries#create'
+  
+  # books routes
+  root 'books#index'
+  post 'books', to: 'books#create'
+  get 'books/new'
+  get 'books/:id/edit', to: 'books#edit', as: 'edit_book'
+  get 'books/:id', to: 'books#show', as: 'book'
+  patch 'books/:id', to: 'books#update'
+  put 'books/:id', to: 'books#update'
+
 end

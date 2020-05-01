@@ -1,0 +1,22 @@
+<h2>Edit book</h2>
+
+<h4><%= flash[:alert] %></h4>
+<%# <%= form_with model: @book do |f| %> %>
+<%= form_with(model: @book, url: books_path(@book), method: 'patch', local: true) do |f| %>
+    <div>
+        <%= f.label :title%>
+        <%= f.text_field :title%>
+    </div>
+    <div>
+        <%= f.label :author%>
+        <%# this will pass author id in the author_id and display full_name  %>
+        <%= f.collection_select(:author_id, @author, :id, :full_name)%>
+    </div>
+    <div>
+        <%= f.label :genre%>
+        <%= f.collection_check_boxes(:genre_ids, @genre, :id, :name)%>
+    </div>
+    <div>
+        <%= f.submit%>
+    </div>
+<% end %>

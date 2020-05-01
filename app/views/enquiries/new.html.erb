@@ -1,0 +1,23 @@
+<h1>New Enquiry</h1>
+
+<%= form_with model: @enquiry do |e| %>
+    <div>
+        <%= e.label :name %>
+        <%= e.text_field :name %>
+    </div>
+    <div>
+        <%= e.label :email %>
+        <%= e.text_field :email %>
+    </div>
+    <div>
+        <%= e.label :phone_number %>
+        <%= e.text_field :phone_numbers %>
+    </div>
+    <div>
+        <%= e.label :enquiry_message %>
+        <%= e.text_area(:enquiry_messages, size: '24x6') %>
+    </div>
+    <div>
+        <%= e.submit %>
+    </div>
+<% end %>

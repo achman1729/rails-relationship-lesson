@@ -1,0 +1,17 @@
+
+    <div>
+        <%= f.label :title%>
+        <%= f.text_field :title%>
+    </div>
+    <div>
+        <%= f.label :author%>
+        <%# this will pass author id in the author_id and display full_name  %>
+        <%= f.collection_select(:author_id, author, :id, :full_name)%>
+    </div>
+    <div>
+        <%= f.label :genre%>
+        <%= f.collection_check_boxes(:genre_ids, genre, :id, :name)%>
+    </div>
+    <div>
+        <%= f.submit%>
+    </div>

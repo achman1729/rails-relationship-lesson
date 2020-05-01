@@ -1,0 +1,26 @@
+<h1>All the enquiries</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Enquiry Message</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% if @enquiry%>
+            <% @enquiry.each do |e| %>
+                <tr>
+                    <td><%= e.name %><td>
+                    <td><%= e.email %><td>
+                    <td><%= e.phone_numbers %><td>
+                    <td><%= e.enquiry_messages %><td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+
+</table>
